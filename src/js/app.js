@@ -7,13 +7,12 @@ export default class ErrorRepository {
     map.set('401', 'Не авторизован');
     map.set('404', 'Не найдено');
   }
+
+  // eslint-disable-next-line class-methods-use-this
   translate(code) {
     if (map.get(code) === undefined) {
-      return 'Unknown error'
+      return 'Unknown error';
     }
     return map.get(code);
   }
 }
-
-const repository = new ErrorRepository();
-console.log(repository.translate('403'));
